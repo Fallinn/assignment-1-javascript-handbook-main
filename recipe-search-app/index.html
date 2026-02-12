@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Search App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">&#127858; Recipe Search</h1>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">&#9790;</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <form id="searchForm" class="search-form">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search for a recipe... (e.g., pasta, chicken, cake)"
+          required
+          autocomplete="off"
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <!-- Search History -->
+      <div id="searchHistory" class="search-history"></div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="category-section">
+      <h2 class="section-title">Popular Categories</h2>
+      <div class="category-buttons">
+        <button class="category-btn active" data-category="All">&#127869; All</button>
+        <button class="category-btn" data-category="Chicken">&#127831; Chicken</button>
+        <button class="category-btn" data-category="Beef">&#129385; Beef</button>
+        <button class="category-btn" data-category="Seafood">&#129424; Seafood</button>
+        <button class="category-btn" data-category="Vegetarian">&#129388; Vegetarian</button>
+        <button class="category-btn" data-category="Dessert">&#127856; Dessert</button>
+        <button class="category-btn" data-category="Pasta">&#127837; Pasta</button>
+        <button class="category-btn" data-category="Lamb">&#129385; Lamb</button>
+        <button class="category-btn" data-category="Pork">&#129382; Pork</button>
+        <button class="category-btn" data-category="Breakfast">&#127859; Breakfast</button>
+        <button class="category-btn" data-category="Miscellaneous">&#127860; Misc</button>
+      </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Searching for delicious recipes...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error" class="error-message hidden"></div>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="results-section hidden">
+      <h2 class="section-title" id="resultsTitle">Search Results</h2>
+      <div id="results" class="results-grid"></div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favoritesSection" class="favorites-section">
+      <h2 class="section-title">&#10084; Your Favorites</h2>
+      <div id="favorites" class="results-grid"></div>
+      <p id="noFavorites" class="no-favorites">No favorites yet. Search for recipes and click the heart to save them!</p>
+    </section>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div id="recipeModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built with &#10084; by Gauravi &mdash; JavaScript Developer's Handbook Capstone Project</p>
+    <p>Data from <a href="https://www.themealdb.com/" target="_blank" rel="noopener">TheMealDB</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
